@@ -60,7 +60,7 @@ class App extends Component {
             <div className='menu-offset' ></div>
             <Route exact path="/" component={ Home }/>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </Router>
       </Provider>
