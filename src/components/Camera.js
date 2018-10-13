@@ -25,25 +25,14 @@ class Camera extends Component {
             <div>
                 <Webcam 
                     audio={ false }
-                    height={ 350 }
-                    width={350}
                     ref={ this.setRef }
                     screenshotFormat="image/jpeg"
                     videoConstraints={ videoConstraints }
                 />
                 <div className='capture-button-container' >
-                    <Button 
-                        className='take-picture'
-                        onClick={ this.capture }
-                        style={{ backgroundColor: 'transparent', border: 'none' }}
-                    >
-                        <Icon 
-                            type="chrome" 
-                            style={{ 
-                                fontSize: '5vw',
-                             }}
-                        />
-                    </Button>
+                    <button className='capture-button' >
+
+                    </button>
                 </div>
             </div>)
     }

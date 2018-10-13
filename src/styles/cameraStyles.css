@@ -18,5 +18,11 @@
 
 .take-picture:focus {
     outline: none;
+}
 
+.capture-button {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 5vw;
+    width: 5vw;
 }
