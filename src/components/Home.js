@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import "../styles/button.css"
 
 class Home extends Component {
     render() {
         return(
-            <div className='homeScreen'  >
+            <div className='homeScreen'>
                 Home
             </div>
         )
