@@ -94,9 +94,15 @@ body {
     justify-content: space-between;
 }
 
+<<<<<<< HEAD
+.homeScreen {
+  /* border: 1px solid black; */
+  display: flex;
+=======
 .divider {
     height: 1vw;
     display: flex;
     justify-content: space-around;
     margin: 0 4vw;
+>>>>>>> ef117033ddce195821332250f8952bb549bfe6fe
 }
