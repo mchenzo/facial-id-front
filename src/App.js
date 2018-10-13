@@ -37,6 +37,7 @@ class App extends Component {
         <Router>
           <div className="App container">
             <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,500,600" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
             <div className='menu' >
               <Menu
                 onClick={this.handleClick}

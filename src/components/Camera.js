@@ -22,16 +22,32 @@ class Camera extends Component {
         };
 
         return (
-            <div>
+            <div 
+                className='col-1-2' 
+                style={{ marginLeft: '2vw' }}
+            >
                 <Webcam 
                     audio={ false }
                     ref={ this.setRef }
                     screenshotFormat="image/jpeg"
                     videoConstraints={ videoConstraints }
                 />
-                <div className='capture-button-container' >
-                    <button className='capture-button' >
-
+                <div className='capture-menu' >
+                    <button 
+                        className='menu-button' 
+                        style={{ marginRight: '1vw' }}
+                        onClick={ this.capture }
+                    >
+                        <i 
+                            className="material-icons md-48"
+                            style={{ fontSize: '64px' }}
+                        >camera</i>
+                    </button>
+                    <button className='menu-button' >
+                        <i 
+                            className="material-icons md-48"
+                            style={{ fontSize: '64px' }}
+                        >camera</i>
                     </button>
                 </div>
             </div>)
