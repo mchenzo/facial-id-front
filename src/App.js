@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import Content from './components/Content';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 class App extends Component {
@@ -15,7 +11,6 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          <Content />
           <Footer />
         </div>
       </Router>
