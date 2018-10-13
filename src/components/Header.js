@@ -43,8 +43,6 @@ class Header extends Component {
                         <Link to="/"><Icon type="home" />Screen</Link>
                     </Menu.Item>
                 </Menu>
-
-                <Route exact path="/" component={ HomeScreen }/>
             </div>
         )
     }
