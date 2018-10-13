@@ -46,7 +46,7 @@ class App extends Component {
                 style={{ boxShadow: '0 6px 7px -7px #333' }}
               >
                 <Menu.Item key="logo">
-                  <Link to="/"><Icon type="check" />VERIFY</Link>
+                  <Link to="/"><Icon type="check" />FaceAuth</Link>
                 </Menu.Item>
                 <Menu.Item key="home">
                   <Link to="/"><Icon type="home" />Home</Link>

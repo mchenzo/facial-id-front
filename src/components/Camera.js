@@ -13,16 +13,43 @@ class Camera extends Component {
     setRef = webcam => {
         this.webcam = webcam;
     };
+
+    b64toBlob = (b64Data, contentType='', sliceSize=512) => {
+        const byteCharacters = atob(b64Data);
+        const byteArrays = [];
+        for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            const slice = byteCharacters.slice(offset, offset + sliceSize);
+            const byteNumbers = new Array(slice.length);
+            for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            byteArrays.push(byteArray);
+        }
+        const blob = new Blob(byteArrays, {type: contentType});
+        return blob;
+    }
+
     
     capture = async () => {
         const { uiStore } = this.props;
         const imageSrc = this.webcam.getScreenshot();
+        uiStore.setVerifying(true);
         uiStore.setModalVisibility(true);
-        console.log('>>>>> Screen shot :: ', imageSrc);
+        let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
 
         let res = await axios.post('https://12f2c9b8.ngrok.io/face_recognition', {
-            image: imageSrc,
+            image: strImage,
         })
+
+        const contentType = 'image/jpeg';
+        let blob = this.b64toBlob(strImage, contentType);
+        let blobUrl = URL.createObjectURL(blob);
+
+        console.log(' >>>> Receiving Res :::::  ::::: :::: ', res.data)
+        uiStore.setVerifying(false);
+
+
     };
 
     render() {
@@ -55,15 +82,6 @@ class Camera extends Component {
                                 style={{ fontSize: '48px' }}
                             >camera</i>
                         </button>
-                        {/* <button 
-                            className='menu-button' 
-                            onClick={ this.reset }
-                        >
-                            <i 
-                                className="material-icons md-48"
-                                style={{ fontSize: '48px' }}
-                            >cached</i>
-                        </button> */}
                     </div>
                 </div>
             </div>)
