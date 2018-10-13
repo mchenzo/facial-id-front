@@ -18,7 +18,9 @@
 .register:hover {
     background-color: #00FFF6;
     border-color: #00FFF6;
+    /* border-color: black; */
     color: #004D40;
+    /* color:black; */
 }
 
 .signin{
@@ -28,5 +30,7 @@
 .signin:hover {
     background-color: #00FFF6;
     border-color: #00FFF6;
+    /* border-color: black; */
     color: #004D40;
+    /* color: black; */
 }
