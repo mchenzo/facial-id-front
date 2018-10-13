@@ -30,7 +30,7 @@
 }
 
 .camera-menu {
-    border: 2px solid #FF1744;
+    border: 2px solid #3da9fb;
     position: fixed;
     width: 60vw;
     height: 70vh;
@@ -45,7 +45,7 @@
     background: transparent;
     height: 5vw;
     width: 5vw;
-    color: #FF1744;
+    color: #3da9fb;
     opacity: 0.8;
     transition: 0.3s;
 }
