@@ -34,7 +34,7 @@ class App extends Component {
       <Provider {...stores} >
         <Router>
           <div className="App container">
-            <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,500,600" rel="stylesheet" />
             <div className='menu' >
               <Menu
                 onClick={this.handleClick}
@@ -42,8 +42,8 @@ class App extends Component {
                 mode="horizontal"
                 style={{ boxShadow: '0 6px 7px -7px #333' }}
               >
-                <Menu.Item key="home">
-                  <Link to="/"><Icon type="home" />LOGO</Link>
+                <Menu.Item key="logo">
+                  <Link to="/"><Icon type="check" />VERIFY</Link>
                 </Menu.Item>
                 <Menu.Item key="home">
                   <Link to="/"><Icon type="home" />Home</Link>
