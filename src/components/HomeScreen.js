@@ -4,7 +4,21 @@ class HomeScreen extends Component {
     render() {
         return (
             <div className='homeScreen' > 
-                HomeScreen 
+                <div className='row' >
+                    <div className='col-1-3' >col</div>
+                    <div className='col-1-3' >col</div>
+                    <div className='col-1-3' >col</div>
+                </div>
+                <div className='row' >
+                    <div className='col-1-3' >col</div>
+                    <div className='col-1-3' >col</div>
+                    <div className='col-1-3' >col</div>
+                </div>
+                <div className='row' >
+                    <div className='col-1-3' >col</div>
+                    <div className='col-1-3' >col</div>
+                    <div className='col-1-3' >col</div>
+                </div>
             </div>
         )
     }
