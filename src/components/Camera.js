@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import { Button, Icon } from 'antd';
 import Webcam from "react-webcam";
+import { observer, inject } from 'mobx-react';
+import { observable, action } from 'mobx';
+import axios from 'axios';
 import '../styles/cameraStyles.css';
 
+
+@inject("uiStore")
+@observer
 class Camera extends Component {
     setRef = webcam => {
         this.webcam = webcam;
     };
     
-    capture = () => {
+    capture = async () => {
+        const { uiStore } = this.props;
         const imageSrc = this.webcam.getScreenshot();
+        uiStore.setModalVisibility(true);
         console.log('>>>>> Screen shot :: ', imageSrc);
+
+        let res = await axios.post('https://12f2c9b8.ngrok.io/face_recognition', {
+            image: imageSrc,
+        })
     };
-
-    reset = () => {
-
-    }
 
     render() {
         const videoConstraints = {
@@ -47,7 +55,7 @@ class Camera extends Component {
                                 style={{ fontSize: '48px' }}
                             >camera</i>
                         </button>
-                        <button 
+                        {/* <button 
                             className='menu-button' 
                             onClick={ this.reset }
                         >
@@ -55,7 +63,7 @@ class Camera extends Component {
                                 className="material-icons md-48"
                                 style={{ fontSize: '48px' }}
                             >cached</i>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>)
