@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Header from './components/header';
-import Footer from './components/footer';
 import { Menu, Icon } from 'antd';
 import { Provider } from 'mobx-react';
 import {
@@ -38,13 +36,15 @@ class App extends Component {
           <div className="App container">
             <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" />
             <div className='menu' >
-              <Header />
               <Menu
                 onClick={this.handleClick}
                 selectedKeys={[this.state.current]}
                 mode="horizontal"
                 style={{ boxShadow: '0 6px 7px -7px #333' }}
               >
+                <Menu.Item key="home">
+                  <Link to="/"><Icon type="home" />LOGO</Link>
+                </Menu.Item>
                 <Menu.Item key="home">
                   <Link to="/"><Icon type="home" />Home</Link>
                 </Menu.Item>
@@ -59,8 +59,6 @@ class App extends Component {
             </div>
             <div className='menu-offset' ></div>
             <Route exact path="/" component={ Home }/>
-
-            {/* <Footer /> */}
           </div>
         </Router>
       </Provider>
