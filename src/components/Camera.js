@@ -13,42 +13,50 @@ class Camera extends Component {
         console.log('>>>>> Screen shot :: ', imageSrc);
     };
 
+    reset = () => {
+
+    }
 
     render() {
         const videoConstraints = {
-            width: 1280,
-            height: 720,
+            width: '1300',
+            height: '1300',
             facingMode: "user"
         };
 
         return (
-            <div 
-                className='col-1-2' 
-                style={{ marginLeft: '2vw' }}
-            >
+            <div>
                 <Webcam 
                     audio={ false }
                     ref={ this.setRef }
+                    height={ window.innerHeight }
+                    width={ window.innerWidth }
+                    style={{ marginLeft: '-1vw', marginTop: '-1vw' }}
                     screenshotFormat="image/jpeg"
                     videoConstraints={ videoConstraints }
                 />
-                <div className='capture-menu' >
-                    <button 
-                        className='menu-button' 
-                        style={{ marginRight: '1vw' }}
-                        onClick={ this.capture }
-                    >
-                        <i 
-                            className="material-icons md-48"
-                            style={{ fontSize: '64px' }}
-                        >camera</i>
-                    </button>
-                    <button className='menu-button' >
-                        <i 
-                            className="material-icons md-48"
-                            style={{ fontSize: '64px' }}
-                        >camera</i>
-                    </button>
+                <div className='camera-wrapper' >
+                    <div className='camera-menu' >
+                        <button 
+                            className='menu-button' 
+                            style={{ marginRight: '1vw' }}
+                            onClick={ this.capture }
+                        >
+                            <i 
+                                className="material-icons md-48"
+                                style={{ fontSize: '48px' }}
+                            >camera</i>
+                        </button>
+                        <button 
+                            className='menu-button' 
+                            onClick={ this.reset }
+                        >
+                            <i 
+                                className="material-icons md-48"
+                                style={{ fontSize: '48px' }}
+                            >cached</i>
+                        </button>
+                    </div>
                 </div>
             </div>)
     }
