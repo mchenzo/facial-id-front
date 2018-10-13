@@ -17,10 +17,13 @@
 
 .camera-wrapper {
     z-index: 99;
-    border: 100px solid rgba(139, 149, 179, 0.4);
+    border-top: 35vh solid rgba(22, 24, 32, 0.6);
+    border-left: 20vw solid rgba(22, 24, 32, 0.6);
+    border-bottom: 36vh solid rgba(22, 24, 32, 0.6);
+    border-right: 32vw solid rgba(22, 24, 32, 0.6);
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 60vw;
+    height: 70vh;
     top: 30vh;
     margin-top: -50vh; /* Negative half of height. */
     box-sizing: content-box;
@@ -33,7 +36,7 @@
     height: 70vh;
     top: 30vh;
     left: 50%;
-    margin-top: -100px; /* Negative half of height. */
+    margin-top: -15vh; /* Negative half of height. */
     margin-left: -30vw; /* Negative half of width. */
 }
 
