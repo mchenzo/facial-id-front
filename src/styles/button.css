@@ -24,13 +24,27 @@
 }
 
 .signin{
-    border-color: #00FFF6;
+    border-color: #3da9fb;
 }
 
 .signin:hover {
-    background-color: #00FFF6;
-    border-color: #00FFF6;
+    background-color: #3da9fb;
+    border-color: #3da9fb;
     /* border-color: black; */
     color: #004D40;
     /* color: black; */
+}
+
+.about{
+    margin-top: 2.5vh;
+    margin-right: 9.5vh;
+    background-color: #3da9fb;
+    border-color: white;
+    color: white;
+}
+
+.about:hover{
+    background-color: white;
+    border-color: white;
+    color: #3da9fb;
 }

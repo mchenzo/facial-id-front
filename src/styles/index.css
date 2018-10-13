@@ -63,7 +63,7 @@ body {
 }
 
 .menu-offset {
-    height: 8vw;
+    height: 0vw;
 }
 
 .footer {
@@ -86,12 +86,12 @@ body {
 }
 
 .homeScreen {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
 }
 
 .row {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 30vh;
     display: flex;
 }
@@ -99,5 +99,5 @@ body {
 .col-1-3 {
     height: 100%;
     width: 33.3vw;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
