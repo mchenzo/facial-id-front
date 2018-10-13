@@ -1,0 +1,20 @@
+.cap-menu-container {
+    /* border: 1px solid rgb(207, 207, 207);
+    background-color: #F9F9F9; */
+    padding: 1vw;
+    margin: 1vw 4vw;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-between;
+}
+
+.screen-progress {
+    width: 40vw;
+    margin-left: 2vw;
+    /* margin-top: 1vw; */
+}
+
+#reset-screen {
+    margin-left: 1vw;
+}

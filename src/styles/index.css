@@ -19,12 +19,84 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
+
+html {
+	height: 100%
 }
 
-.homeScreen {
-  border: 1px solid black;
-  display: flex;
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+	box-sizing: border-box;
+	height: 100%
+}
+
+.container {
+	height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+	align-items: center;
+}
+
+.header {
+    flex: 1;
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    background-color: #42f4cb;
+    width: 100%;
+    height: 3vw;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu-offset {
+    height: 8vw;
+}
+
+.footer {
+    flex: 1;
+    background-color: #42f4cb;
+    align-self: stretch;
+    height: 3vw;
+}
+
+.content {
+    flex: 8;
+    align-self: stretch;
+}
+
+.symbol-title {
+    margin: 1vw 5vw;
+}
+
+.gridWrapper {
+    height: 100%;
+    /* border: 1px solid black; */
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-col-header {
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.divider {
+    height: 1vw;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 4vw;
 }
