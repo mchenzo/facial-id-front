@@ -48,14 +48,11 @@ class App extends Component {
                 <Menu.Item key="home">
                   <Link to="/"><Icon type="home" />Home</Link>
                 </Menu.Item>
-                <Menu.Item key="register">
-                  <Link to="/"><Icon type="home" />Register</Link>
-                </Menu.Item>
                 <Menu.Item key="add-user">
-                  <Link to="/"><Icon type="home" />Add User</Link>
+                  <Link to="/"><Icon type="user" />Add User</Link>
                 </Menu.Item>
                 <Menu.Item key="screen-users">
-                  <Link to="/"><Icon type="home" />Screen Users</Link>
+                  <Link to="/"><Icon type="eye" />Screen Users</Link>
                 </Menu.Item>
 
               </Menu>
