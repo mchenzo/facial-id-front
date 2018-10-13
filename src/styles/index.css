@@ -18,3 +18,13 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.homeScreen {
+  border: 1px solid black;
+  display: flex;
+}
