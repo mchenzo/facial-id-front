@@ -43,11 +43,29 @@
 
 .top {
     justify-content: flex-start;
-    /* flex-wrap: wrap; */
 }
 
 .center {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+
+.modal-title {
+    font-family: Raleway;
+    font-size: 3vh;
+    margin-bottom: 2vw;
+    font-weight: 500;
+}
+
+.textBox{
+    margin: 8px;
+    padding: 8px 15px;
+    border: none;
+    border-bottom: 2px solid darkgray;
+    outline: none;
+}
+
+.textBox:valid{
+    border-bottom: 2px solid #3da9fb;
 }

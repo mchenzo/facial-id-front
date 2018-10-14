@@ -6,6 +6,7 @@ export class uiStore {
     @observable verifying = true;
     @observable previewUrl = '';
     @observable learnMoreModalVisible = false;
+    @observable registerInfoModalVisible = false;
 
     @action 
     setModalVisibility = (visible) => {
@@ -28,8 +29,12 @@ export class uiStore {
     
     @action
     setLearnMoreModalVisibility = (visible) => {
-        console.log(' open learn more modal ::: ::: :: ::: ', this.learnMoreModalVisible)
         this.learnMoreModalVisible = visible
+    }
+    
+    @action
+    setRegisterInfoModalVisibility = (visible) => {
+        this.registerInfoModalVisible = visible;
     }
 }
 

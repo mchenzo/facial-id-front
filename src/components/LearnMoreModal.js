@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Button, Icon } from 'antd';
 import { observer, inject } from 'mobx-react';
 import { observable, action } from 'mobx';
+import '../styles/home.css';
 
 
 @inject("uiStore")
