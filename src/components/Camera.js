@@ -35,18 +35,21 @@ class Camera extends Component {
         const { uiStore } = this.props;
         const imageSrc = this.webcam.getScreenshot();
         uiStore.setVerifying(true);
+        uiStore.resetPreview();
         uiStore.setModalVisibility(true);
         let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
 
-        let res = await axios.post('https://12f2c9b8.ngrok.io/face_recognition', {
+        let res = await axios.post('http://104.248.190.139:5000/face_recognition', {
             image: strImage,
         })
 
-        const contentType = 'image/jpeg';
+        let contentType = 'image/jpeg';
         let blob = this.b64toBlob(strImage, contentType);
         let blobUrl = URL.createObjectURL(blob);
 
-        console.log(' >>>> Receiving Res :::::  ::::: :::: ', res.data)
+
+        console.log(' >>>> Receiving Res :::::  ::::: :::: ', res.data, blobUrl)
+        uiStore.setPreview(blobUrl);
         uiStore.setVerifying(false);
 
 
@@ -54,8 +57,8 @@ class Camera extends Component {
 
     render() {
         const videoConstraints = {
-            width: '1300',
-            height: '1300',
+            width: '2600',
+            height: '2600',
             facingMode: "user"
         };
 

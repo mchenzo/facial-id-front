@@ -19,9 +19,9 @@ class VerificationModal extends Component {
         return (
             <div>
                 <Modal 
-                    title="Verifying User"
+                    title="Verification"
                     style={{ top: 20 }}
-                    headerStyle={{ backgroundColor: 'aquamarine' }}
+                    headerStyle={{ backgroundColor: 'blue' }}
                     width="55vw"
                     visible={ uiStore.verifyModalVisible }
                     destroyOnClose={ true }
@@ -41,13 +41,21 @@ class VerificationModal extends Component {
                             <Step status="finish" title="Scan" icon={<Icon type="user" />} />
                             <Step 
                                 status={ uiStore.verifying ? "process" : "finish" } 
-                                title="Verification" 
+                                title="Checking User" 
                                 icon={<Icon type={ uiStore.verifying ? "loading" : "solution" } />} />
                             <Step 
                                 status={ uiStore.verifying ? "wait" : "process" } 
                                 title="Confirmation" 
                                 icon={<Icon type="check" />} />
                         </Steps>
+                    </div>
+                    <div className='verify-modal-body' >
+                        <div className="preview-wrapper" >
+                            <img 
+                                src={ uiStore.previewUrl } 
+                                className="mug-prview"
+                            />
+                        </div>
                     </div>
                 </Modal>
             </div>

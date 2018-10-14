@@ -67,3 +67,28 @@
     flex-direction: row;
     align-self: center;
 }
+
+.mug-preview {
+    max-width: 30vw;
+    max-height: 30vh;
+    object-fit: contain;
+}
+
+.mug-preview img {
+    height: 30vh;
+    width: 30vw;
+}
+
+.preview-wrapper {
+    border: 1px solid black;
+    height: 30vh;
+    width: 30vw;
+    overflow: hidden;
+}
+
+.verify-modal-body {
+    height: 100%;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+}
