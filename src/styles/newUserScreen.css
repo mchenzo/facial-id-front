@@ -18,11 +18,13 @@
 .new-user-bottom-bar {
     position: fixed;
     bottom: 0;
-    background: #FFF;
-    opacity: 0.25;
+    background: rgba(255, 255, 255, 0.25);
     height: 50vh;
     width: 100%;
     z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .take-photo-wrapper {
@@ -73,10 +75,69 @@
 .avatar-uploader {
     z-index: 10;
     position: fixed;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.avatar-uploader:hover {
+    opacity: 1.0;
+    transition: 0.3s;
 }
 
 .upload-text {
     font-family: Raleway;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
+}
+
+.new-user-bottom-left {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-user-bottom-right {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-user-entry {
+    width: 20vw;
+    border-bottom: 2px solid #FFF;
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.take-photo {
+    border-radius: 6.5vw;
+    width: 13vw;
+    height: 13vw;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.take-photo:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1.0;
+}
+
+::placeholder {
+    color: #FFF !important;
+}
+
+.new-user-field:focus {
+    outline: none !important;
+}
+
+.new-user-divider {
+    border-right: 2px solid #FFF;
+    
 }
