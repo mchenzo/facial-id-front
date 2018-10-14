@@ -9,9 +9,10 @@ const hideSecrets = {
     display: 'none'
 }
 const showSecrets = {
-    display: 'block'
+    display: 'flex'
 }
-
+const enterInfo = "Enter Class Information"
+const showPins = "Secret Pins"
 
 @inject("uiStore")
 @observer
@@ -28,10 +29,12 @@ class RegisterInfoModal extends Component {
 
     openRegisterInfoModal = () => {
         const { uiStore } = this.props;
+
         Modal.success({
-            title: (<h1 className='modal-title'>Enter Class Information</h1>),
+            title: (<h1 className='modal-title'>{ uiStore.registrationPinVisible ? showPins : enterInfo}</h1>),
             content: (
                 <div>
+                    <div style={ uiStore.registrationPinVisible ? hideSecrets : showSecrets }>
                     <form>
                         <label> 
                             Class Name:
@@ -42,6 +45,7 @@ class RegisterInfoModal extends Component {
                             <input required className='textBox' type="number" placeholder="Class Size" /><br/>
                         </label>
                     </form>
+                    </div>
                     <div className='modal-col' style={ uiStore.registrationPinVisible ? showSecrets : hideSecrets } >
                         <div className='admin-col'>
                             <p className='code-header'>Admin Secret Pin</p>
@@ -63,6 +67,9 @@ class RegisterInfoModal extends Component {
             ),
             iconType: "none",
             onOk(){
+                if (uiStore.registrationPinVisible){
+                    <Link to="/screenPeople"><Icon type="eye" />Screen Users</Link>
+                }
                 uiStore.setRegistrationPinVisibility(true);
             },
             width: "40vw",
@@ -70,17 +77,29 @@ class RegisterInfoModal extends Component {
         })
     }
 
+    getButtonText = (registrationPinVisible) => {
+        if (registrationPinVisible){
+            return (
+                <Button 
+                    className="btn add" 
+                    onClick= { this.openRegisterInfoModal }
+                >
+                    <Icon type="select" />Show Secret Pins
+                </Button>)
+        } else {
+            return (
+                <Button
+                    className="btn add"
+                    onClick={ this.openRegisterInfoModal }
+                >
+                    <Icon type="form" />Register a New Class
+                </Button>)
+        }
+    }
     render() {
         const { uiStore } = this.props
 
-        return (
-            <Button
-                className="btn add"
-                onClick={ this.openRegisterInfoModal }
-            >
-                <Icon type="form" />Register a New Class
-            </Button>
-        )
+        return (<div>{ this.getButtonText(uiStore.registrationPinVisible) }</div>)
     }
 }
 

@@ -23,7 +23,7 @@ class LearnMoreModal extends Component {
             your classroom runs smoothly. 
         </p>),
             onOk(){ 
-                uiStore.setLearnMoreModalVisibility(false) 
+                uiStore.setLearnMoreModalVisibility(false);
             }
         })
     }
