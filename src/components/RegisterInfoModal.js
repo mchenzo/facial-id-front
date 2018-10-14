@@ -8,7 +8,8 @@ const hideSecrets = {
     display: 'none'
 }
 const showSecrets = {
-    display: 'flex'
+    display: 'flex',
+    flexDirection: 'column'
 }
 const enterInfo = "Enter Class Information"
 const showPins = "Secret Pins"
@@ -23,7 +24,17 @@ class RegisterInfoModal extends Component {
     }
 
     generatePin = () => {
-        return Math.floor(Math.random() * 10000);
+        var int = Math.floor(Math.random() * 10000);
+        if (int < 10){
+            return "000" + int;
+        }
+        if (int < 100){
+            return "00" + int;
+        }
+        if (int < 1000){
+            return "0" + int;
+        }
+        return int;
     }
 
     openRegisterInfoModal = () => {
@@ -45,30 +56,30 @@ class RegisterInfoModal extends Component {
                         </label>
                     </form>
                     </div>
-                    <div className='modal-col' style={ uiStore.registrationPinVisible ? showSecrets : hideSecrets } >
-                        <div className='admin-col'>
-                            <p className='code-header'>Admin Secret Pin</p>
-                            <p className='admin pin'>{this.generatePin()}</p>
-                            <p className='code-desc'>This code will be used for you to view the results of your
-                            class. Make sure to save it and keep it secret!</p>
-                        </div>
+                    <div style={ uiStore.registrationPinVisible ? showSecrets : hideSecrets } >
+                        <div className='modal-col' >
+                            <div className='admin-col'>
+                                <p className='code-header'>Admin Secret Pin</p>
+                                <p className='admin pin'>{this.generatePin()}</p>
+                                <p className='code-desc'>This code will be used for you to view the results of your
+                                class. Make sure to save it and keep it secret!</p>
+                            </div>
 
-                        <div className='vert-separator'/>
+                            <div className='vert-separator'/>
 
-                        <div className='admin-col'>
-                            <p className='code-header'>Student Secret Pin</p>
-                            <p className='student pin'>{this.generatePin()}</p>
-                            <p className='code-desc'>This code will be used for students to check-in to your
-                            class. Feel free to share it with your students!</p>
-                        </div>
+                            <div className='admin-col'>
+                                <p className='code-header'>Student Secret Pin</p>
+                                <p className='student pin'>{this.generatePin()}</p>
+                                <p className='code-desc'>This code will be used for students to check-in to your
+                                class. Feel free to share it with your students!</p>
+                            </div>
+                        </div><br/>
+                        <Button className="btn-modal" href="/addUser">Add Users</Button>
                     </div>
                 </div>
             ),
             iconType: "none",
             onOk(){
-                // if (uiStore.registrationPinVisible){
-                //     <Link to="/screenPeople"></Link>
-                // }
                 uiStore.setRegistrationPinVisibility(true);
             },
             width: "40vw",
