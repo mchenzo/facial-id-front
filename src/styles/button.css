@@ -57,6 +57,18 @@
     border-radius: 3vh;
     border: none;
     padding-top: 1vh;
+    transition: 0.3s;
+    opacity: 0.85;
+}
+
+.new-user-button:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1.0;
+}
+
+.new-user-button:focus {
+    outline: none;
 }
 
 .new-user-button h1 {
@@ -71,8 +83,19 @@
     border: none;
     border-radius: 3vh;
     background-color: #FFF;
+    transition: 0.3s;
+    opacity: 0.85;
 }
 
+.icon-button:hover {
+    cursor: pointer;
+    opacity: 1.0;
+    transition: 0.3s;
+}
+
+.icon-button:focus {
+    outline: none;
+}
 
 .btn-screen {
     background-color: white;
