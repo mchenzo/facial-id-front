@@ -4,6 +4,7 @@ import axios from 'axios';
 export class uiStore {
     @observable verifyModalVisible = false;
     @observable verifying = true;
+    @observable validUser = true;
     @observable previewUrl = '';
     @observable learnMoreModalVisible = false;
 
@@ -30,6 +31,11 @@ export class uiStore {
     setLearnMoreModalVisibility = (visible) => {
         console.log(' open learn more modal ::: ::: :: ::: ', this.learnMoreModalVisible)
         this.learnMoreModalVisible = visible
+    }
+
+    @action
+    setUserValidity = (valid) => {
+        this.validUser = valid;
     }
 }
 
