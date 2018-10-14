@@ -51,7 +51,30 @@
     color: #3da9fb;
 }
 
-.btn-screen{
+.new-user-button {
+    width: 20vw;
+    height: 6vh;
+    border-radius: 3vh;
+    border: none;
+    padding-top: 1vh;
+}
+
+.new-user-button h1 {
+    color: #2bc7e2;
+    font-family: Raleway;
+    font-size: 16px;
+}
+
+.icon-button {
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    border-radius: 3vh;
+    background-color: #FFF;
+}
+
+
+.btn-screen {
     background-color: white;
     color: #3da9fb;
     height: 40px;

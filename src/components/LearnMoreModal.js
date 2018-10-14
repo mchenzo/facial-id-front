@@ -18,9 +18,8 @@ class LearnMoreModal extends Component {
         const { uiStore } = this.props;
         Modal.info({
             title: (<h3>About FaceAuth</h3>),
-            content: (<p><strong>FaceAuth™</strong> combines dlib facial recognition and DocuSign's API
-            to provide two layers of authentication and verification to ensure
-            your classroom runs smoothly. 
+            content: (<p><strong>FaceAuth™</strong> combines dlib facial recognition and DocuSign's eSignature API
+            to provide two layers of identification to your classroom, facilitating smooth, honest learning. 
         </p>),
             onOk(){ 
                 uiStore.setLearnMoreModalVisibility(false);
