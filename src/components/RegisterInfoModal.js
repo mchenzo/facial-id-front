@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button, Icon } from 'antd';
 import { observer, inject } from 'mobx-react';
-import { observable, action } from 'mobx';
 import '../styles/button.css';
 import '../styles/home.css';
 
@@ -67,9 +66,9 @@ class RegisterInfoModal extends Component {
             ),
             iconType: "none",
             onOk(){
-                if (uiStore.registrationPinVisible){
-                    <Link to="/screenPeople"><Icon type="eye" />Screen Users</Link>
-                }
+                // if (uiStore.registrationPinVisible){
+                //     <Link to="/screenPeople"></Link>
+                // }
                 uiStore.setRegistrationPinVisibility(true);
             },
             width: "40vw",

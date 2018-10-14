@@ -30,7 +30,8 @@
 }
 
 .camera-menu {
-    border: 2px solid #3da9fb;
+    border: 4px solid #1DE9B6;
+    border-radius: 4px;
     position: fixed;
     width: 60vw;
     height: 70vh;
@@ -45,7 +46,7 @@
     background: transparent;
     height: 5vw;
     width: 5vw;
-    color: #3da9fb;
+    color: #1DE9B6;
     opacity: 0.8;
     transition: 0.3s;
 }
@@ -84,7 +85,7 @@
 
 .verify-modal-body {
     height: 100%;
-    width: 50vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
 }

@@ -10,11 +10,17 @@ export class uiStore {
     @observable registerInfoModalVisible = false;
     @observable userName = '';
     @observable registrationPinVisible = false;
+    @observable docusignModalVisible = false;
 
     @action 
     setModalVisibility = (visible) => {
         this.verifyModalVisible = visible
         // console.log(' :: :: :: Set Modal Visibility: ', visible);
+    }
+
+    @action
+    setDocusignModalVisibility = (visible) => {
+        this.docusignModalVisible = visible;
     }
 
     @action
@@ -48,6 +54,12 @@ export class uiStore {
     @action
     setRegistrationPinVisibility = (visible) => {
         this.registrationPinVisible = visible;
+    }
+
+    @action
+    setUserName = (name) => {
+        this.userName = name;
+        console.log('set username to ', this.userName)
     }
 }
 
