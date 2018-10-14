@@ -69,21 +69,17 @@
 }
 
 .mug-preview {
-    max-width: 30vw;
-    max-height: 30vh;
-    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.mug-preview img {
-    height: 30vh;
-    width: 30vw;
+.mug-preview img.resize {
+    width: 100%;
 }
 
 .preview-wrapper {
     border: 1px solid black;
-    height: 30vh;
-    width: 30vw;
-    overflow: hidden;
+    width: 25vw;
 }
 
 .verify-modal-body {

@@ -6,7 +6,7 @@ class NewUserScreen extends Component {
 
     render() {
         return(
-            <div className='' >
+            <div className='new-user-screen' >
             </div>
         )
     }

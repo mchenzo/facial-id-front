@@ -4,9 +4,12 @@ import axios from 'axios';
 export class uiStore {
     @observable verifyModalVisible = false;
     @observable verifying = true;
+    @observable validUser = true;
     @observable previewUrl = '';
     @observable learnMoreModalVisible = false;
     @observable registerInfoModalVisible = false;
+    @observable userName = '';
+    @observable registrationPinVisible = false;
 
     @action 
     setModalVisibility = (visible) => {
@@ -35,6 +38,16 @@ export class uiStore {
     @action
     setRegisterInfoModalVisibility = (visible) => {
         this.registerInfoModalVisible = visible;
+    }
+
+    @action
+    setUserValidity = (valid) => {
+        this.validUser = valid;
+    }
+
+    @action
+    setRegistrationPinVisibility = (visible) => {
+        this.registrationPinVisible = visible;
     }
 }
 
