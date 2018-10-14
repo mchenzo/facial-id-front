@@ -35,18 +35,20 @@ class Camera extends Component {
         const { uiStore } = this.props;
         const imageSrc = this.webcam.getScreenshot();
         uiStore.setVerifying(true);
+        uiStore.setUserValidity(true);
         uiStore.resetPreview();
         uiStore.setModalVisibility(true);
         let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
+        
+        let contentType = 'image/jpeg';
+        let blob = this.b64toBlob(strImage, contentType);
+        let blobUrl = URL.createObjectURL(blob);
 
         let res = await axios.post('http://104.248.190.139:5000/face_recognition', {
             image: strImage,
         })
 
-        let contentType = 'image/jpeg';
-        let blob = this.b64toBlob(strImage, contentType);
-        let blobUrl = URL.createObjectURL(blob);
-
+        if (res.data === 'None') uiStore.setUserValidity(false);
 
         console.log(' >>>> Receiving Res :::::  ::::: :::: ', res.data, blobUrl)
         uiStore.setPreview(blobUrl);
