@@ -77,16 +77,18 @@ class Camera extends Component {
                 />
                 <div className='camera-wrapper' >
                     <div className='camera-menu' >
-                        <button 
-                            className='menu-button' 
-                            style={{ marginRight: '1vw' }}
-                            onClick={ this.capture }
-                        >
-                            <i 
-                                className="material-icons md-48"
-                                style={{ fontSize: '48px' }}
-                            >camera</i>
-                        </button>
+                        <div style={{ display: 'flex', height: '100%', justifyContent: 'center', alignItems: 'flex-end' }} >
+                            <button 
+                                className='menu-button' 
+                                style={{ marginRight: '1vw' }}
+                                onClick={ this.capture }
+                            >
+                                <i 
+                                    className="material-icons md-48"
+                                    style={{ fontSize: '48px' }}
+                                >camera</i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>)

@@ -13,12 +13,6 @@ const finishedCardStyle = {
     width: '100%',
     display: 'block'
 }
-const showOkButton = {
-    display: 'block'
-}
-const hideOkButton = {
-    display: 'none'
-}
 const ErrorTitle = "Your face was not recognized, try again"
 const ErrorMessage = "We couldn't find your face in the database. Try repositioning yourself in the frame and make sure the lighting is ok. Take off any headphones or hoodies"
 const SuccessTitle = "Face Recognized! All Set"
@@ -74,7 +68,7 @@ class VerificationModal extends Component {
                     title="Identity Verification"
                     style={{ top: 20 }}
                     headerStyle={{ backgroundColor: 'blue' }}
-                    width="55vw"
+                    width="60vw"
                     visible={ uiStore.verifyModalVisible }
                     destroyOnClose={ true }
                     onCancel={() => { uiStore.setModalVisibility(false) }}
@@ -83,7 +77,7 @@ class VerificationModal extends Component {
                         <Button 
                             key="Ok" 
                             type="primary" 
-                            style={ (!uiStore.verifying && uiStore.validUser) ? showOkButton : hideOkButton }
+                            disabled={ (uiStore.verifying || !uiStore.validUser) ? true : false }
                             onClick={() => { 
                                 uiStore.setModalVisibility(false) 
                             }}
