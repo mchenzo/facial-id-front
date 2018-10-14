@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'antd';
+import { Modal, Button, Icon } from 'antd';
 import { observer, inject } from 'mobx-react';
 import { observable, action } from 'mobx';
 
@@ -13,36 +13,31 @@ class LearnMoreModal extends Component {
         uiStore.setLearnMoreModalVisibility(false);
     }
 
+    openLearnMoreModal = () => {
+        const { uiStore } = this.props;
+        Modal.info({
+            title: (<h3>About FaceAuth</h3>),
+            content: (<p><strong>FaceAuth™</strong> combines dlib facial recognition and DocuSign's API
+            to provide two layers of authentication and verification to ensure
+            your classroom runs smoothly. 
+        </p>),
+            onOk(){ 
+                uiStore.setLearnMoreModalVisibility(false) 
+            }
+        })
+    }
+
 
     render() {
         const { uiStore } = this.props
-
+    
         return (
-            <div>
-                <Modal 
-                    title="About FaceAuth"
-                    bodyStyle={{ fontFamily: "Raleway", fontWeight: 200}}
-                    style={{ top: 20 }}
-                    headerStyle={{ backgroundColor: "#3da9fb"}}
-                    width="30vw"
-                    visible={ uiStore.learnMoreModalVisible }
-                    destroyOnClose={ true }
-                    footer={[
-                        <Button key="back" onClick={this.handleCancel}>Ok</Button>
-                    ]}
-                    onOk={ () => { 
-                        uiStore.setLearnMoreModalVisibility(false) 
-                    }}
-                    onCancel={ () => { 
-                        uiStore.setLearnMoreModalVisibility(false) 
-                    }}
-                >
-                <p><strong>FaceAuth™</strong> combines dlib facial recognition and DocuSign's API
-                    to provide two layers of authentication and verification to ensure
-                    your classroom runs smoothly. 
-                </p>
-                </Modal>
-            </div>
+            <Button 
+                className="btn about"
+                onClick={ this.openLearnMoreModal }
+            >
+                Learn More<Icon type="right" />
+            </Button>
         )
     }
 }

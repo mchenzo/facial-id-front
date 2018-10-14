@@ -30,7 +30,7 @@
     margin: 0;
     margin-left: 14vw;
     font-weight:200;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .white {
@@ -43,7 +43,7 @@
 
 .top {
     justify-content: flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .center {

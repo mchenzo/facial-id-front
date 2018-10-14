@@ -33,12 +33,7 @@ class HomeScreen extends Component {
                             to the classroom to 
                             enhance the learning experience.
                         </h2>
-                        <Button 
-                            className="btn about"
-                            onClick={ this.openLearnMoreModal }
-                        >
-                            Learn More<Icon type="right" />
-                        </Button>
+                        <LearnMoreModal/>
                     </div>
                     <div className='col-1-3' ></div>
                     <div className='col-1-3 float-right top' >
@@ -52,17 +47,17 @@ class HomeScreen extends Component {
                         <Button 
                             // type="primary"
                             className="btn screen"
-                            onPress={() => this.props.navigation.navigate("screenPeople")}
                         >
                             <Icon type="login" />Check-in to Existing Session
                         </Button>
                         <Button 
                             // type="primary"
                             className="btn add"
+                            onClick={ this.openRegisterInfoModal }
                         >
                             <Icon type="form" />Register a New Session
                         </Button>
-                        <LearnMoreModal/>
+                        
                     </div>
                 </div>
             </div>
