@@ -74,7 +74,7 @@ class RegisterInfoModal extends Component {
                                 class. Feel free to share it with your students!</p>
                             </div>
                         </div><br/>
-                        <Button className="btn-modal" href="/addUser">Add Users</Button>
+                        <Button className="btn-modal" href="/addUser" width="50px">Add Users</Button>
                     </div>
                 </div>
             ),

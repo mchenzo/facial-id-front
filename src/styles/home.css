@@ -131,9 +131,32 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-right: 3vw;
 }
 
 .numBox{
+    margin-top: 2vh;
+    width: 60px;
+    height: 60px;
     border: 2px solid black;
-    border-radius: 3px;
+    border-radius: 5px;
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.numBox:focus{
+    outline: none;
+}
+
+.numBox:valid{
+    border-color: #3da9fb;
+
 }
