@@ -3,15 +3,16 @@ import { Modal, Button, Icon, Input } from 'antd';
 import { observer, inject } from 'mobx-react';
 import { observable, action } from 'mobx';
 import '../styles/home.css';
+import '../styles/button.css';
 
 
 @inject("uiStore")
 @observer
-class pinModal extends Component {
+class PinModal extends Component {
 
     handleCancel = () => {
         const { uiStore } = this.props;
-        uiStore.setpinModalVisibility(false);
+        uiStore.setPinModalVisibility(false);
     }
 
     openPinModal = () => {
@@ -19,18 +20,19 @@ class pinModal extends Component {
         Modal.info({
             title: (<h1 className='modal-title'>Enter Secret Pin</h1>),
             content: (
-                <div className="pinBox">
-                    <input required className='numBox 1' type='number'/>
-                    <input required className='numBox 2' type='number'/>
-                    <input required className='numBox 3' type='number'/>
-                    <input required className='numBox 4' type='number'/>
+                <div>
+                    <div className="pinBox">
+                        <input required className='numBox 1' type='number' max="9" min="0"/>
+                        <input required className='numBox 2' type='number' max="9" min="0"/>
+                        <input required className='numBox 3' type='number' max="9" min="0"/>
+                        <input required className='numBox 4' type='number' max="9" min="0"/>
+                    </div><br/>
+                    <Button className="btn-screen" href="/screenPeople">Enter</Button>
                 </div>
                 
             ),
-            icon: "none";
-            onOk(){ 
-                uiStore.setpinModalVisibility(false);
-            }
+            iconType: "none",
+            okText: "Close"
         })
     }
 
@@ -40,13 +42,15 @@ class pinModal extends Component {
     
         return (
             <Button 
-                className="btn about"
-                onClick={ this.openpinModal }
+                // type="primary"
+                className="btn screen"
+                onClick={ this.openPinModal } 
             >
-                Learn More<Icon type="right" />
+                <Icon type="login" />Check-in to Existing Session
+
             </Button>
         )
     }
 }
 
-export default pinModal
+export default PinModal
