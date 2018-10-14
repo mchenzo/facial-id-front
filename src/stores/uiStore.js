@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export class uiStore {
     @observable verifyModalVisible = false;
-    @observable cameraModalVisible = true;
+    @observable cameraModalVisible = false;
     @observable verifying = true;
     @observable validUser = true;
     @observable previewUrl = '';
