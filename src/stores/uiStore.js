@@ -3,6 +3,8 @@ import axios from 'axios';
 
 export class uiStore {
     @observable verifyModalVisible = false;
+    @observable verifying = true;
+    @observable previewUrl = '';
     @observable learnMoreModalVisible = false;
 
     @action 
@@ -10,6 +12,19 @@ export class uiStore {
         this.verifyModalVisible = visible
         // console.log(' :: :: :: Set Modal Visibility: ', visible);
     }
+
+    @action
+    setVerifying = (status) => {
+        this.verifying = status;
+    }
+
+    @action
+    setPreview = (url) => {
+        this.previewUrl = url;
+    }
+
+    @action
+    resetPreview = () => this.previewUrl = '';
     
     @action
     setLearnMoreModalVisibility = (visible) => {
