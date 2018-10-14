@@ -13,6 +13,10 @@ const finishedCardStyle = {
     width: '100%',
     display: 'block'
 }
+const ErrorTitle = "Your face was not recognized, try again"
+const ErrorMessage = "We couldn't find your face in the database. Try repositioning yourself in the frame and make sure the lighting is ok. Take off any headphones or hoodies"
+const SuccessTitle = "Face Recognized! All Set"
+
 
 @inject("uiStore")
 @observer
@@ -31,8 +35,8 @@ class VerificationModal extends Component {
             >
                 <Skeleton loading={ uiStore.verifying } avatar active>
                     <Meta
-                        title="Card title"
-                        description="This is the description"
+                        title={ uiStore.validUser ? SuccessTitle : ErrorTitle }
+                        description={ uiStore.validUser ? '[Generate user specific success message]' : ErrorMessage }
                     />
                 </Skeleton>
             </Card>
