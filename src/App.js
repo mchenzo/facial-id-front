@@ -11,6 +11,7 @@ import '../node_modules/antd/dist/antd.css';
 import uiStore from './stores/uiStore';
 import HomeScreen from './components/HomeScreen';
 import CameraScreen from './components/CameraScreen';
+import logo from './assets/logo.jpg';
 
 const stores = { uiStore }
 
@@ -46,10 +47,8 @@ class App extends Component {
                 style={{ boxShadow: '0 6px 7px -7px #333' }}
               >
                 <Menu.Item key="logo">
-                  <Link to="/"><Icon type="check" />VERIFY</Link>
-                </Menu.Item>
-                <Menu.Item key="home">
-                  <Link to="/"><Icon type="home" />Home</Link>
+                  <img className="logo" src={ logo } />
+                  <Link to="/"></Link>
                 </Menu.Item>
                 <Menu.Item key="add-user">
                   <Link to="/"><Icon type="user" />Add User</Link>
