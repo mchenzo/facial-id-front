@@ -48,6 +48,6 @@
 
 .center {
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }

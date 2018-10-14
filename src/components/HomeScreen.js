@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
-import { Button, Icon } from 'antd';
+import { Button, Icon, Modal } from 'antd';
+import LearnMoreModal from '../components/LearnMoreModal';
+import { observer, inject } from "mobx-react";
 import '../styles/home.css';
 import '../styles/button.css';
+import { uiStore } from '../stores/uiStore';
+import Link from 'react-router-dom/Link';
 
+
+@inject("uiStore")
+@observer
 class HomeScreen extends Component {
+    openLearnMoreModal = () => {
+        const { uiStore } = this.props;
+        uiStore.setLearnMoreModalVisibility(true)
+    }
+
     render() {
         return (
             <div className='homeScreen' > 
                 <div className='row' >
                     <div className='col-1-3 float-right bottom' >
-                        <h1 className='title white'>VERIFY</h1></div>
+                        <h1 className='title white'>FaceAuth</h1></div>
                     <div className='col-1-3' ></div>
                     <div className='col-1-3 float-right bottom' >
                         <h1 className='subtitle'>GET</h1>
@@ -23,6 +35,7 @@ class HomeScreen extends Component {
                         </h2>
                         <Button 
                             className="btn about"
+                            onClick={ this.openLearnMoreModal }
                         >
                             Learn More<Icon type="right" />
                         </Button>
@@ -38,16 +51,18 @@ class HomeScreen extends Component {
                     <div className='col-1-3 float-right center' >
                         <Button 
                             // type="primary"
-                            className="btn signin"
+                            className="btn screen"
+                            onPress={() => this.props.navigation.navigate("screenPeople")}
                         >
-                            <Icon type="login" />Login
+                            <Icon type="login" />Check-in to Existing Session
                         </Button>
                         <Button 
                             // type="primary"
-                            className="btn register"
+                            className="btn add"
                         >
-                            <Icon type="form" />Register
+                            <Icon type="form" />Register a New Session
                         </Button>
+                        <LearnMoreModal/>
                     </div>
                 </div>
             </div>
