@@ -2,15 +2,75 @@ import { observable, action, computed } from 'mobx';
 import axios from 'axios';
 
 export class uiStore {
-    @observable cameraVisible = true;
+    @observable verifyModalVisible = false;
+    @observable cameraModalVisible = false;
+    @observable verifying = true;
+    @observable validUser = true;
+    @observable previewUrl = '';
+    @observable learnMoreModalVisible = false;
+    @observable registerInfoModalVisible = false;
+    @observable userName = '';
+    @observable registrationPinVisible = false;
+    @observable docusignModalVisible = false;
+    @observable pinModalVisible = false;
 
     @action 
-    setCameraVisibility = (visible) => {
-        this.cameraVisible = visible
-        console.log(' :: :: :: Set Camera Visibility: ', visible)
+    setModalVisibility = (visible) => {
+        this.verifyModalVisible = visible
     }
 
+    @action
+    setCameraModalVisibility = (visible) => {
+        this.cameraModalVisible = visible;
+    }
+
+    @action
+    setDocusignModalVisibility = (visible) => {
+        this.docusignModalVisible = visible;
+    }
+
+    @action
+    setVerifying = (status) => {
+        this.verifying = status;
+    }
+
+    @action
+    setPreview = (url) => {
+        this.previewUrl = url;
+    }
+
+    @action
+    resetPreview = () => this.previewUrl = '';
     
+    @action
+    setLearnMoreModalVisibility = (visible) => {
+        this.learnMoreModalVisible = visible
+    }
+    
+    @action
+    setRegisterInfoModalVisibility = (visible) => {
+        this.registerInfoModalVisible = visible;
+    }
+
+    @action
+    setUserValidity = (valid) => {
+        this.validUser = valid;
+    }
+
+    @action
+    setRegistrationPinVisibility = (visible) => {
+        this.registrationPinVisible = visible;
+    }
+
+    @action
+    setUserName = (name) => {
+        this.userName = name;
+    }
+
+    @action
+    setPinModalVisibility = (visible) => {
+        this.pinModalVisible = visible;
+    }
 }
 
 export default new uiStore();

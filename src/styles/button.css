@@ -1,43 +1,45 @@
 .btn {
     background-color: white;
     color: #004D40;
-    height: 3vw;
-    width: 10vw;
-    padding: 0 1vw;
+    height: 50px;
+    width: 400px;
+    /* padding: 0 1vw; */
     font-size: 16px;
     cursor: pointer;
     border-radius: 3px;
     border: 2px solid #00FFF6;
     margin-right: 1vw;
+    margin-top: 2vw;
 }
 
-.register{
+.add{
     border-color: #00FFF6;
 }
 
-.register:hover {
+.add:hover {
     background-color: #00FFF6;
     border-color: #00FFF6;
     /* border-color: black; */
-    color: #004D40;
-    /* color:black; */
+    /* color: #004D40; */
+    color: black;
 }
 
-.signin{
+.screen{
     border-color: #3da9fb;
 }
 
-.signin:hover {
+.screen:hover {
     background-color: #3da9fb;
     border-color: #3da9fb;
     /* border-color: black; */
-    color: #004D40;
+    color: black;
     /* color: black; */
 }
 
 .about{
     margin-top: 2.5vh;
     margin-right: 9.5vh;
+    width: 150px;
     background-color: #3da9fb;
     border-color: white;
     color: white;
@@ -47,4 +49,47 @@
     background-color: white;
     border-color: white;
     color: #3da9fb;
+}
+
+.new-user-button {
+    width: 20vw;
+    height: 6vh;
+    border-radius: 3vh;
+    border: none;
+    padding-top: 1vh;
+}
+
+.new-user-button h1 {
+    color: #2bc7e2;
+    font-family: Raleway;
+    font-size: 16px;
+}
+
+.icon-button {
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    border-radius: 3vh;
+    background-color: #FFF;
+}
+
+
+.btn-screen {
+    background-color: white;
+    color: #3da9fb;
+    height: 40px;
+    width: 68px;
+    padding-top: 0.5vh;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 2px solid #3da9fb;
+    margin-left: 17vw;
+    margin-top: 2vw;
+}
+
+.btn-screen:hover,
+.btn-modal:hover{
+    background-color: #3da9fb;
+    color: white;   
 }

@@ -1,0 +1,154 @@
+.new-user-screen {
+    background: linear-gradient(to bottom, #258cb2 0%,#2bc7e2 20%,#ffaa6d 100%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.new-user-top-bar {
+    height: 45vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.new-user-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.35);
+    height: 55vh;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.take-photo-wrapper {
+    margin-top: 12vh;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 7.5vw;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 1vw;
+}
+
+.upload-wrapper {
+    margin-top: 12vh;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 7.5vw;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 1vw;
+}
+
+.photo-background {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    opacity: 0.25;
+    z-index: 2;
+    border-radius: 7vw;
+}
+
+.big-or {
+    margin-top: 20vh;
+}
+
+.big-or h1 {
+    font-family: Raleway;
+    font-size: 80px;
+    font-weight: 200;
+    color: #FFF;
+}
+
+.ant-upload {
+    border-radius: 6.5vw !important;
+    border: none !important;
+    width: 13vw !important;
+    height: 13vw !important;
+}
+
+.avatar-uploader {
+    z-index: 10;
+    position: fixed;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.avatar-uploader:hover {
+    opacity: 1.0;
+    transition: 0.3s;
+}
+
+.upload-text {
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.new-user-bottom-left {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-user-bottom-right {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-user-entry {
+    width: 20vw;
+    border-bottom: 2px solid #FFF;
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.take-photo {
+    border-radius: 6.5vw;
+    width: 13vw;
+    height: 13vw;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.take-photo:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1.0;
+}
+
+.take-photo:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #FFF !important;
+}
+
+.new-user-field:focus {
+    outline: none !important;
+}
+
+.new-user-divider {
+    border-right: 2px solid #FFF;
+}
+
+.icon-button-container {
+    margin-top: 1vw;
+    display: flex; 
+    width: 15vw;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -11,6 +11,8 @@ import '../node_modules/antd/dist/antd.css';
 import uiStore from './stores/uiStore';
 import HomeScreen from './components/HomeScreen';
 import CameraScreen from './components/CameraScreen';
+import NewUserScreen from './components/NewUserScreen';
+import logo from './assets/logo.jpg';
 
 const stores = { uiStore }
 
@@ -31,6 +33,7 @@ class App extends Component {
   render() {
     const Home = () => (<HomeScreen />)
     const ScreenPeople = () => (<CameraScreen />)
+    const NewUser = () => (<NewUserScreen />)
 
     return (
       <Provider {...stores} >
@@ -45,14 +48,12 @@ class App extends Component {
                 mode="horizontal"
                 style={{ boxShadow: '0 6px 7px -7px #333' }}
               >
-                <Menu.Item key="logo">
-                  <Link to="/"><Icon type="check" />VERIFY</Link>
-                </Menu.Item>
                 <Menu.Item key="home">
-                  <Link to="/"><Icon type="home" />Home</Link>
+                  <img className="logo" src={ logo } />
+                  <Link to="/"></Link>
                 </Menu.Item>
                 <Menu.Item key="add-user">
-                  <Link to="/"><Icon type="user" />Add User</Link>
+                  <Link to="/addUser"><Icon type="user" />Add User</Link>
                 </Menu.Item>
                 <Menu.Item key="screen-users">
                   <Link to="/screenPeople"><Icon type="eye" />Screen Users</Link>
@@ -63,6 +64,7 @@ class App extends Component {
             <div className='menu-offset' ></div>
             <Route exact path="/" component={ Home }/>
             <Route path="/screenPeople" component={ CameraScreen }/>
+            <Route path="/addUser" component={ NewUser }/>
           </div>
         </Router>
       </Provider>
