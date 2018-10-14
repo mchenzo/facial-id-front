@@ -13,6 +13,12 @@ const finishedCardStyle = {
     width: '100%',
     display: 'block'
 }
+const showOkButton = {
+    display: 'block'
+}
+const hideOkButton = {
+    display: 'none'
+}
 const ErrorTitle = "Your face was not recognized, try again"
 const ErrorMessage = "We couldn't find your face in the database. Try repositioning yourself in the frame and make sure the lighting is ok. Take off any headphones or hoodies"
 const SuccessTitle = "Face Recognized! All Set"
@@ -61,8 +67,6 @@ class VerificationModal extends Component {
 
     render() {
         const { uiStore } = this.props;
-        
-        
 
         return (
             <div>
@@ -73,12 +77,19 @@ class VerificationModal extends Component {
                     width="55vw"
                     visible={ uiStore.verifyModalVisible }
                     destroyOnClose={ true }
-                    onOk={ () => { 
-                        uiStore.setModalVisibility(false) 
-                    }}
-                    onCancel={ () => { 
-                        uiStore.setModalVisibility(false) 
-                    }}
+                    onCancel={() => { uiStore.setModalVisibility(false) }}
+                    footer={[
+                        <Button key="Cancel" onClick={() => { uiStore.setModalVisibility(false) }}>Cancel</Button>,
+                        <Button 
+                            key="Ok" 
+                            type="primary" 
+                            style={ (!uiStore.verifying && uiStore.validUser) ? showOkButton : hideOkButton }
+                            onClick={() => { 
+                                uiStore.setModalVisibility(false) 
+                            }}
+                        > Signature
+                        </Button>,
+                    ]}
                 >
                     <div className='screen-steps' >
                         <Steps>

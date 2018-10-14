@@ -7,6 +7,7 @@ export class uiStore {
     @observable validUser = true;
     @observable previewUrl = '';
     @observable learnMoreModalVisible = false;
+    @observable userName = '';
 
     @action 
     setModalVisibility = (visible) => {
