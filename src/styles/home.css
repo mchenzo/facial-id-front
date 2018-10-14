@@ -33,6 +33,10 @@
     /* flex-wrap: wrap; */
 }
 
+.peach {
+    color: #fbddb1;
+}
+
 .white {
     color: white;
 }
@@ -121,4 +125,15 @@
 }
 .student{
     color: #00fff6;   
+}
+
+.pinBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.numBox{
+    border: 2px solid black;
+    border-radius: 3px;
 }

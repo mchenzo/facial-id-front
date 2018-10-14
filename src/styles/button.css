@@ -3,7 +3,7 @@
     color: #004D40;
     height: 50px;
     width: 400px;
-    padding: 0 1vw;
+    /* padding: 0 1vw; */
     font-size: 16px;
     cursor: pointer;
     border-radius: 3px;
@@ -71,4 +71,23 @@
     border: none;
     border-radius: 3vh;
     background-color: #FFF;
+}
+
+.btn-modal{
+    background-color: white;
+    color: #3da9fb;
+    height: 50px;
+    width: 120px;
+    padding-top:  1.3vh;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 2px solid #3da9fb;
+    margin-right: 1vw;
+    margin-top: 2vw;
+}
+
+.btn-modal:hover{
+    background-color: #3da9fb;
+    color: white;   
 }

@@ -8,7 +8,6 @@ import { uiStore } from '../stores/uiStore';
 import Link from 'react-router-dom/Link';
 import RegisterInfoModal from './RegisterInfoModal';
 
-
 @inject("uiStore")
 @observer
 class HomeScreen extends Component {
@@ -22,19 +21,18 @@ class HomeScreen extends Component {
             <div className='homeScreen' > 
                 <div className='row' >
                     <div className='col-1-3 float-right bottom' >
-                        <h1 className='title white'>FaceAuth</h1></div>
+                        <h1 className='title peach'>FaceAuth</h1></div>
                     <div className='col-1-3' ></div>
                     <div className='col-1-3 float-right bottom' >
                         <h1 className='subtitle'>GET</h1>
                     </div>
                 </div>
                 <div className='row' >
-                    <div className='col-1-3 float-right top' >
-                        <h2 className='desc white'>Bringing Cloud Solutions and Facial Recognition 
-                            to the classroom to 
-                            enhance the learning experience.
+                    <div className='col-1-3 float-right' >
+                        <h2 className='desc white'>Bringing Facial Recognition and DocuSign
+                            to the classroom to promote Academic Honesty and enhance the
+                            authenticity of education.
                         </h2>
-                        <LearnMoreModal/>
                     </div>
                     <div className='col-1-3' ></div>
                     <div className='col-1-3 float-right top' >
@@ -42,14 +40,19 @@ class HomeScreen extends Component {
                     </div>
                 </div>
                 <div className='row' >
-                    <div className='col-1-3' ></div>
+                    <div className='col-1-3 float-right top' >
+                        <LearnMoreModal/>
+                    </div>
                     <div className='col-1-3' ></div>
                     <div className='col-1-3 float-right center' >
                         <Button 
                             // type="primary"
                             className="btn screen"
+                            href="/screenPeople"
+                            style={{ paddingTop: '0.8vh' }}
                         >
                             <Icon type="login" />Check-in to Existing Session
+
                         </Button>
                         <RegisterInfoModal/>
                     </div>
