@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Upload, Icon } from 'antd';
 import NewUserButton from './NewUserButton';
+import IconButton from './IconButton';
 import '../styles/newUserScreen.css';
 
 const ICONSTYLE = { fontSize: '22px', color: '#FFF', margin: '1vw' }
@@ -48,11 +49,7 @@ class NewUserScreen extends Component {
                             listType="picture-card"
                             className="avatar-uploader"
                             showUploadList={false}
-                            // action="//jsonplaceholder.typicode.com/posts/"
-                            // beforeUpload={beforeUpload}
-                            // onChange={this.handleChange}
                         >
-                            {/* {imageUrl ? <img src={imageUrl} alt="avatar" /> : uploadButton} */}
                             { uploadButton }
                         </Upload>
                     </div>
@@ -72,6 +69,21 @@ class NewUserScreen extends Component {
                         <NewUserButton 
                             text="SIGN IN"
                         />
+                        
+                        <div
+                            style={{ 
+                                color: '#FFF',
+                                fontFamily: 'Raleway',
+                                fontSize: '16px',
+                                marginTop: '1vw'
+                            }}
+                        >Sign in with</div>
+
+                        <div className='icon-button-container' > 
+                            <IconButton type="gitlab" />
+                            <IconButton type="google" />
+                            <IconButton type="linkedin" />
+                        </div>
                     </div>
                     <div className='new-user-bottom-right' >
                         <div className='new-user-entry' >

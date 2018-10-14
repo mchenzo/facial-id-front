@@ -8,7 +8,7 @@
 }
 
 .new-user-top-bar {
-    height: 50vh;
+    height: 45vh;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -18,8 +18,8 @@
 .new-user-bottom-bar {
     position: fixed;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.25);
-    height: 50vh;
+    background: rgba(255, 255, 255, 0.35);
+    height: 55vh;
     width: 100%;
     z-index: 2;
     display: flex;
@@ -28,7 +28,7 @@
 }
 
 .take-photo-wrapper {
-    margin-top: 15vh;
+    margin-top: 12vh;
     height: 15vw;
     width: 15vw;
     border-radius: 7.5vw;
@@ -37,7 +37,7 @@
 }
 
 .upload-wrapper {
-    margin-top: 15vh;
+    margin-top: 12vh;
     height: 15vw;
     width: 15vw;
     border-radius: 7.5vw;
@@ -139,5 +139,12 @@
 
 .new-user-divider {
     border-right: 2px solid #FFF;
-    
+}
+
+.icon-button-container {
+    margin-top: 1vw;
+    display: flex; 
+    width: 15vw;
+    flex-direction: row;
+    justify-content: space-between;
 }

@@ -64,3 +64,11 @@
     font-family: Raleway;
     font-size: 16px;
 }
+
+.icon-button {
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    border-radius: 3vh;
+    background-color: #FFF;
+}
