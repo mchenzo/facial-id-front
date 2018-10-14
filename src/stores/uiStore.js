@@ -11,6 +11,7 @@ export class uiStore {
     @observable userName = '';
     @observable registrationPinVisible = false;
     @observable docusignModalVisible = false;
+    @observable pinModalVisible = false;
 
     @action 
     setModalVisibility = (visible) => {
@@ -60,6 +61,11 @@ export class uiStore {
     setUserName = (name) => {
         this.userName = name;
         console.log('set username to ', this.userName)
+    }
+
+    @action
+    setPinModalVisibility = (visible) => {
+        this.pinModalVisible = visible;
     }
 }
 
