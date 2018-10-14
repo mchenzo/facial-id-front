@@ -65,20 +65,6 @@
     margin-top: 2vw;
 }
 
-.btn-screen{
-    background-color: white;
-    color: #3da9fb;
-    height: 40px;
-    width: 100px;
-    padding-top: 0.5vh;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 3px;
-    border: 2px solid #3da9fb;
-    margin-left: 20vw;
-    margin-top: 2vw;
-}
-
 .btn-screen:hover,
 .btn-modal:hover{
     background-color: #3da9fb;
