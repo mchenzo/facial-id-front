@@ -47,7 +47,6 @@ class App extends Component {
                 style={{ boxShadow: '0 6px 7px -7px #333' }}
               >
                 <Menu.Item key="home">
-                  <Link to="/"><Icon type="home" />Home</Link>
                   <img className="logo" src={ logo } />
                   <Link to="/"></Link>
                 </Menu.Item>
