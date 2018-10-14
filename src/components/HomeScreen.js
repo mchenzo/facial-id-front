@@ -6,6 +6,7 @@ import '../styles/home.css';
 import '../styles/button.css';
 import { uiStore } from '../stores/uiStore';
 import Link from 'react-router-dom/Link';
+import RegisterInfoModal from './RegisterInfoModal';
 
 
 @inject("uiStore")
@@ -50,14 +51,7 @@ class HomeScreen extends Component {
                         >
                             <Icon type="login" />Check-in to Existing Session
                         </Button>
-                        <Button 
-                            // type="primary"
-                            className="btn add"
-                            onClick={ this.openRegisterInfoModal }
-                        >
-                            <Icon type="form" />Register a New Session
-                        </Button>
-                        
+                        <RegisterInfoModal/>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,9 @@ export class uiStore {
     @observable validUser = true;
     @observable previewUrl = '';
     @observable learnMoreModalVisible = false;
+    @observable registerInfoModalVisible = false;
     @observable userName = '';
+    @observable registrationPinVisible = false;
     @observable docusignModalVisible = false;
 
     @action 
@@ -36,13 +38,22 @@ export class uiStore {
     
     @action
     setLearnMoreModalVisibility = (visible) => {
-        console.log(' open learn more modal ::: ::: :: ::: ', this.learnMoreModalVisible)
         this.learnMoreModalVisible = visible
+    }
+    
+    @action
+    setRegisterInfoModalVisibility = (visible) => {
+        this.registerInfoModalVisible = visible;
     }
 
     @action
     setUserValidity = (valid) => {
         this.validUser = valid;
+    }
+
+    @action
+    setRegistrationPinVisibility = (visible) => {
+        this.registrationPinVisible = visible;
     }
 
     @action
