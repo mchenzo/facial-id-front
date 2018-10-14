@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Upload, Icon } from 'antd';
 import NewUserButton from './NewUserButton';
+import CameraModal from './CameraModal';
+import { inject, observer } from 'mobx-react';
 import IconButton from './IconButton';
 import '../styles/newUserScreen.css';
 
@@ -16,11 +18,13 @@ const INPUTSTYLE = {
     fontWeight: 200
 }
 
+@inject("uiStore")
+@observer
 class NewUserScreen extends Component {
 
-    
-
     render() {
+        const { uiStore } = this.props;
+
         const uploadButton = (
             <div>
                 <Icon type='cloud-upload' style={{ fontSize: '48px' }} />
@@ -32,7 +36,7 @@ class NewUserScreen extends Component {
             <div className='new-user-screen' >
                 <div className='new-user-top-bar' >
                     <div className='take-photo-wrapper' >
-                        <button className='take-photo' >
+                        <button className='take-photo' onClick={ () => uiStore.setCameraModalVisibility(true) } >
                             <Icon 
                                 type="camera" 
                                 theme="filled" 
@@ -106,6 +110,7 @@ class NewUserScreen extends Component {
                         />
                     </div>
                 </div>
+                <CameraModal />
             </div>
         )
     }

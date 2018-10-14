@@ -6,8 +6,6 @@ import { observable, action } from 'mobx';
 import axios from 'axios';
 import '../styles/cameraStyles.css';
 
-const USERNAMES = ['Joseph', 'Michael', 'Anton', 'Daniel'];
-
 @inject("uiStore")
 @observer
 class Camera extends Component {

@@ -129,6 +129,10 @@
     opacity: 1.0;
 }
 
+.take-photo:focus {
+    outline: none;
+}
+
 ::placeholder {
     color: #FFF !important;
 }

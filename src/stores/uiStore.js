@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export class uiStore {
     @observable verifyModalVisible = false;
+    @observable cameraModalVisible = true;
     @observable verifying = true;
     @observable validUser = true;
     @observable previewUrl = '';
@@ -16,7 +17,11 @@ export class uiStore {
     @action 
     setModalVisibility = (visible) => {
         this.verifyModalVisible = visible
-        // console.log(' :: :: :: Set Modal Visibility: ', visible);
+    }
+
+    @action
+    setCameraModalVisibility = (visible) => {
+        this.cameraModalVisible = visible;
     }
 
     @action
@@ -60,7 +65,6 @@ export class uiStore {
     @action
     setUserName = (name) => {
         this.userName = name;
-        console.log('set username to ', this.userName)
     }
 
     @action
