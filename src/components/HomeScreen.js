@@ -7,6 +7,7 @@ import '../styles/button.css';
 import { uiStore } from '../stores/uiStore';
 import Link from 'react-router-dom/Link';
 import RegisterInfoModal from './RegisterInfoModal';
+import PinModal from './PinModal';
 
 @inject("uiStore")
 @observer
@@ -45,15 +46,7 @@ class HomeScreen extends Component {
                     </div>
                     <div className='col-1-3' ></div>
                     <div className='col-1-3 float-right center' >
-                        <Button 
-                            // type="primary"
-                            className="btn screen"
-                            href="/screenPeople"
-                            style={{ paddingTop: '0.8vh' }}
-                        >
-                            <Icon type="login" />Check-in to Existing Session
-
-                        </Button>
+                        <PinModal/>
                         <RegisterInfoModal/>
                     </div>
                 </div>
