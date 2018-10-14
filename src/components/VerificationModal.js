@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Steps, Modal, Button, Card, Skeleton, Icon, Avatar } from 'antd';
 import { observer, inject } from 'mobx-react';
-import { observable, action } from 'mobx';
+import { observable } from 'mobx';
 
 const Step = Steps.Step;
 const { Meta } = Card;
@@ -36,7 +36,7 @@ class VerificationModal extends Component {
                 <Skeleton loading={ uiStore.verifying } avatar active>
                     <Meta
                         title={ uiStore.validUser ? SuccessTitle : ErrorTitle }
-                        description={ uiStore.validUser ? '[Generate user specific success message]' : ErrorMessage }
+                        description={ uiStore.validUser ? `Thanks for scanning in, ${uiStore.userName}. Click the signature button to sign a short academic integrity pledge.` : ErrorMessage }
                     />
                 </Skeleton>
             </Card>
@@ -79,7 +79,7 @@ class VerificationModal extends Component {
                             type="primary" 
                             disabled={ (uiStore.verifying || !uiStore.validUser) ? true : false }
                             onClick={() => { 
-                                uiStore.setModalVisibility(false) 
+                                uiStore.setDocusignModalVisibility(true);
                             }}
                         > Signature
                         </Button>,

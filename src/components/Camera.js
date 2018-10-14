@@ -6,6 +6,7 @@ import { observable, action } from 'mobx';
 import axios from 'axios';
 import '../styles/cameraStyles.css';
 
+const USERNAMES = ['Joseph', 'Michael', 'Anton', 'Daniel'];
 
 @inject("uiStore")
 @observer
@@ -35,6 +36,7 @@ class Camera extends Component {
         const { uiStore } = this.props;
         const imageSrc = this.webcam.getScreenshot();
         uiStore.setVerifying(true);
+        uiStore.setUserName('');
         uiStore.setUserValidity(true);
         uiStore.resetPreview();
         uiStore.setModalVisibility(true);
@@ -49,6 +51,17 @@ class Camera extends Component {
         })
 
         if (res.data === 'None') uiStore.setUserValidity(false);
+        else {
+            let resArray = res.data.split(',')
+            let name = resArray[0].replace("[", "")
+            name = name.replace("\"", "")
+            name = name.replace("'", "")
+            name = name.replace("'", "")
+            name = name.replace(".", "")
+            console.log('resArray: : ', name)
+
+            uiStore.setUserName(name);
+        }
 
         console.log(' >>>> Receiving Res :::::  ::::: :::: ', res.data, blobUrl)
         uiStore.setPreview(blobUrl);

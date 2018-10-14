@@ -8,11 +8,17 @@ export class uiStore {
     @observable previewUrl = '';
     @observable learnMoreModalVisible = false;
     @observable userName = '';
+    @observable docusignModalVisible = false;
 
     @action 
     setModalVisibility = (visible) => {
         this.verifyModalVisible = visible
         // console.log(' :: :: :: Set Modal Visibility: ', visible);
+    }
+
+    @action
+    setDocusignModalVisibility = (visible) => {
+        this.docusignModalVisible = visible;
     }
 
     @action
@@ -37,6 +43,12 @@ export class uiStore {
     @action
     setUserValidity = (valid) => {
         this.validUser = valid;
+    }
+
+    @action
+    setUserName = (name) => {
+        this.userName = name;
+        console.log('set username to ', this.userName)
     }
 }
 
