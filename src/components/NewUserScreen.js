@@ -10,7 +10,7 @@ class NewUserScreen extends Component {
         const uploadButton = (
             <div>
                 <Icon type='plus' />
-                <div className="ant-upload-text">Upload a calm selfie</div>
+                <div className="ant-upload-text"><p className='upload-text' >Upload a calm selfie</p></div>
             </div>
         );
 
@@ -39,6 +39,10 @@ class NewUserScreen extends Component {
                     </div>
                 </div>
                 <div className='new-user-bottom-bar' >
+                    <div className='new-user-bottom-left' >
+                    </div>
+                    <div className='new-user-bottom-right' >
+                    </div>
                 </div>
             </div>
         )

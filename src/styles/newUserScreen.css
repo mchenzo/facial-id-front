@@ -74,3 +74,9 @@
     z-index: 10;
     position: fixed;
 }
+
+.upload-text {
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 300;
+}
