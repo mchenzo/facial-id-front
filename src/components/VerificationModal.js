@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Steps, Modal, Button, Card, Skeleton, Icon, Avatar } from 'antd';
 import { observer, inject } from 'mobx-react';
-import { observable, action } from 'mobx';
+import { observable } from 'mobx';
 
 const Step = Steps.Step;
 const { Meta } = Card;
@@ -12,12 +12,6 @@ const loadingCardStyle = {
 const finishedCardStyle = {
     width: '100%',
     display: 'block'
-}
-const showOkButton = {
-    display: 'block'
-}
-const hideOkButton = {
-    display: 'none'
 }
 const ErrorTitle = "Your face was not recognized, try again"
 const ErrorMessage = "We couldn't find your face in the database. Try repositioning yourself in the frame and make sure the lighting is ok. Take off any headphones or hoodies"
@@ -42,7 +36,7 @@ class VerificationModal extends Component {
                 <Skeleton loading={ uiStore.verifying } avatar active>
                     <Meta
                         title={ uiStore.validUser ? SuccessTitle : ErrorTitle }
-                        description={ uiStore.validUser ? '[Generate user specific success message]' : ErrorMessage }
+                        description={ uiStore.validUser ? `Thanks for scanning in, ${uiStore.userName}. Click the signature button to sign a short academic integrity pledge.` : ErrorMessage }
                     />
                 </Skeleton>
             </Card>
@@ -74,7 +68,7 @@ class VerificationModal extends Component {
                     title="Identity Verification"
                     style={{ top: 20 }}
                     headerStyle={{ backgroundColor: 'blue' }}
-                    width="55vw"
+                    width="60vw"
                     visible={ uiStore.verifyModalVisible }
                     destroyOnClose={ true }
                     onCancel={() => { uiStore.setModalVisibility(false) }}
@@ -83,9 +77,9 @@ class VerificationModal extends Component {
                         <Button 
                             key="Ok" 
                             type="primary" 
-                            style={ (!uiStore.verifying && uiStore.validUser) ? showOkButton : hideOkButton }
+                            disabled={ (uiStore.verifying || !uiStore.validUser) ? true : false }
                             onClick={() => { 
-                                uiStore.setModalVisibility(false) 
+                                uiStore.setDocusignModalVisibility(true);
                             }}
                         > Signature
                         </Button>,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Camera from './Camera';
 import VerificationModal from './VerificationModal';
+import DocusignModal from './DocusignModal';
 import { Steps, Icon } from 'antd';
 import '../styles/cameraStyles.css';
 
@@ -15,6 +16,7 @@ class CameraScreen extends Component {
                 <div className="camera-container" >
                     <Camera />
                     <VerificationModal />
+                    <DocusignModal />
                 </div>
             </div>
         )
